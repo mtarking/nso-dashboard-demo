@@ -1,0 +1,22 @@
+<devices xmlns="http://tail-f.com/ns/ncs">
+    {% if operation is defined %}
+    <device xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="{{ operation }}">
+        <name>{{ device_name }}</name>
+        {% else %}
+        <device>
+            <name>{{ device_name }}</name>
+            <address>{{ device_ip }}</address>
+            <port>{{ device_port }}</port>
+            <authgroup>{{ device_authgroup_name }}</authgroup>
+
+            {% if device_type == "cisco-ios-xr" %}
+            {% include "ned_id_xr.j2" %}
+            {% endif %}
+
+
+        <state>
+            <admin-state>unlocked</admin-state>
+        </state>
+        {% endif %}
+    </device>
+</devices>

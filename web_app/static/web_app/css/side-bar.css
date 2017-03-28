@@ -1,0 +1,235 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+
+
+/* ANGULAR ANIMATIONS
+============================================================================= */
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0%      { transform: rotateZ(0deg); }
+    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(17deg); }
+    60%     { transform: rotateZ(16deg); }
+    100%    { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+
+
+@keyframes fade_out {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes fade_out {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@keyframes fade_in {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes fade_in {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.ng-enter {
+    animation: fade_in 0.5s both ease-in; z-index: 8888;
+    -webkit-animation: fade_in 0.5s both ease-in; z-index: 8888;
+}
+
+.ng-leave {
+    //animation: fade_out 0.5s both ease-in; z-index: 9999;
+    // -webkit-animation: fade_out 0.5s both ease-in; z-index: 8888;
+}
+
+
+
+
+
+@media (max-width: 767px){
+    .option-container {
+        margin-right:15%
+        margin-left: 25%
+    }
+}
+
+.option-container {
+        margin-top:15px
+}
+
+.option {
+    height: 222px;
+}
+
+@media only screen and (max-width:768px){
+    .navbar-logo {
+        display:none;
+    }
+}
+
+.navbar-logo, .btn-image {
+    margin-top: 3px;
+    margin-right: 20px;
+    width: 47px;
+}
+
+.loading-gif{
+    margin: 10px;
+    width: 20px;
+}
+
+.error{
+    color:#d9534f;
+}
+
+.table_button{
+    display:none;
+}
+
+.table_button{
+     float: right;
+}
+td a.table_button {
+    display: none;
+}
+
+tbody tr:hover td a.table_button {
+    display: block;
+}
